@@ -37,13 +37,11 @@ https://pub.dev/packages/pathfinding
 
 Common path finding algorythm A*, although no weights used.
 
-## What's next?
+## Missing/todo  
 
-| Missing/todo  |   |
-|---|---|
-|  unit tests |   |
-|   More extensive expection handling           |       |
-|   comments & code explantion           |       |
-|   More extensive expection handling           |       |
+- [ ] unit tests 
+- [ ] More extensive expection handling - mimimal as rushed for solution        
+- [ ] comments & code explantion       
+- [X] Handle bad input (error files) 
 
 
