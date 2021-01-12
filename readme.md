@@ -46,7 +46,7 @@ Common path finding algorythm A*, although no weights used.
 
 - [ ] unit tests 
 - [ ] efficancy testing
-- [ ] Object creation over referancing - there are notible parts of this code which are horribly inefficant, for example flatterning the graph to run the path finding libary (we could have amended this libary method if more time). 
+- [ ] Object usage, object memory usage (cloning objects) etc - there are notible parts of this code which are horribly inefficant, for example flatterning the graph to run the path finding libary (we could have amended this libary method if more time). 
 - [ ] More extensive expection handling - mimimal as rushed for solution        
 - [ ] comments & code explantion       
 - [X] Handle bad input (error files) 
