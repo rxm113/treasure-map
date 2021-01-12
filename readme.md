@@ -1,7 +1,7 @@
 # Treasure Map solution
 
 ## How to run
-![alt text](https://www.google.com/url?sa=i&url=https%3A%2F%2Fmedium.com%2F%40krossovochkin%2Fdart-language-bad-design-choices-6e35987dc693&psig=AOvVaw3kXWkFMCBJAuqbYkgJ1wP7&ust=1610559686575000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJC4n8L4lu4CFQAAAAAdAAAAABAD)
+![alt text](https://dart.dev/assets/shared/dart-logo-for-shares.png?2)
 
 
 Install Dart
