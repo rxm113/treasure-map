@@ -24,12 +24,13 @@ run main.dart
 
 ```
 $ cd project dirctory
-$ dart run bin/app.dart "input_file_path"
+$ dart run bin/app.dart "input_file_path.txt"
 ```
+The .answer file will be added in the same directory with .answer appened. 
 
 ## Choice of langague
 
-I have used Dart to create this solution, purely as I have been playing around with, and discovering the language, including the Google framework 'Flutter' for the last week. I enjoy checking out new tech, and thought I would give it as whirl. I thought I could use this as a nice scenario to play!
+I have used Dart to create this solution, purely for learning, as I have been playing around with, and discovering the language, including the Google framework 'Flutter' for the last week. I enjoy checking out new tech, and thought I would give it a whirl. I thought I could use this as a nice scenario to play!
 
 ## Choice of path finding
 
