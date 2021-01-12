@@ -1,0 +1,10 @@
+name: little_data_tech_test
+description: Technical test for Little data interview process
+version: 0.0.1
+author: Robert Minford
+
+dependencies:
+  test: ^1.15.7
+  pathfinding: ^2.0.0
+  piecemeal: any
+  
