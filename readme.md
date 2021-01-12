@@ -51,4 +51,4 @@ Common path finding algorythm A*, although no weights used.
 - [ ] comments & code explantion       
 - [X] Handle bad input (error files) 
 
-
+Hey, it solves the problem in the time we have!
