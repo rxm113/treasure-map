@@ -1,5 +1,7 @@
 # Treasure Map solution
 
+I have chosen to complete question 1. of the take home test. This is the solution, please note there are a few missing attributes which i would have liked to complete, although I was advised to only spend a few hours working through. The solution below will work, and output the relevant solutions as per the instructions. Listed in the "Missing/ todo" section below are the items I would have liked to finish up, if this were a 'real world' problem.
+
 ## How to run
 ![](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Dart-logo-wordmark.svg/200px-Dart-logo-wordmark.svg.png)
 
