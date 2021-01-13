@@ -6,6 +6,7 @@ import 'utils.dart';
 import 'coordante.dart';
 import 'state.dart';
 
+//Treasure map is made of of Cordinates, with a number of other fiels, this can be expanded in the future for more purposes.
 class TreasureMap {
   List cordinates = null;
   final int xMax;
@@ -15,6 +16,7 @@ class TreasureMap {
   bool solvable;
 
   //Constrcutur: to String take input and build the Treasure Map.
+  //Input a list of cordinates represented in a String (as they come from currentl input types (files etc)).
   TreasureMap(List array, this.xMax, this.yMax) {
     //get max and max
     cordinates = List.generate(this.yMax + 1,

@@ -1,13 +1,9 @@
 import '../lib/map.dart';
 import '../lib/utils.dart';
 
-//TODO
-// exceptipn handling - sort the error item out
-// create some tests
-// create readme with (diff path finding algorythms, why used dart, how to run, video)
-
 String fileLocation = null;
-
+// main method which takes text input from file, generates a Treasure Map object,
+// processes the quickest path to the treasure and outputs the result (in format from spec) to file.
 void main(List<String> args) async {
   TreasureMap tm =
       Utils.processTextToTreasureMap(await Utils.readTextMapFromFile(args[0]));

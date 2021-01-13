@@ -6,8 +6,7 @@ import 'state.dart';
 import 'map.dart';
 
 class Utils {
-  final String fileLocation = null;
-//get data from file and generate array of points.
+//convert inputted text data into correct format to generate a treasure map
   static TreasureMap processTextToTreasureMap(String text) {
     //inport data rom file
 
@@ -38,6 +37,7 @@ class Utils {
     return inputText;
   }
 
+// Takes a treasure map and outputs the text based representation of the object (used for processing with the external path finding libary)
   static List flatternTresureMap(TreasureMap tm) {
     List flatternMap = [];
     for (var row in tm.cordinates) {
@@ -51,6 +51,7 @@ class Utils {
     return flatternMap;
   }
 
+// takes a treasure map, converts to specified format and writes to file
   static void writeTextMapToFile(TreasureMap tm, String fileLocation) {
     var file = new File(fileLocation + '.answer');
     var sink = file.openWrite();

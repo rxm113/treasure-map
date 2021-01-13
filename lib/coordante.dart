@@ -1,5 +1,6 @@
 import 'state.dart';
 
+//represents a single corodnate on the map, with position (x,y), state (ocean, reef, treasure etc)
 class Coordinate {
   final int x;
   final int y;
@@ -18,6 +19,7 @@ class Coordinate {
     }
   }
 
+// print the single cordiate
   @override
   String toString() {
     return '| X: ${x}, Y ${y}} - ${state} |';
