@@ -77,7 +77,7 @@ Hey, one for a rainy evening!
 - [ ] Efficancy testing - many loops which could be improved
 - [ ] Object usage, object memory usage (cloning objects) etc - there are notible parts of this code which are horribly inefficant, for example flatterning the graph to run the path finding libary (we could have amended this libary method if more time). 
 - [ ] Utlise expection handling (some custom) to move away from if/else statements - used as quick to implement.     
-- [ ] Comments & code explantion       
+- [ ] Indeoth comments  doc for code explantion       
 - [X] Handle known 'bad' input format (error files) 
 
 Hey, it solves the problem in the time we have!
