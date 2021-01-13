@@ -54,6 +54,7 @@ treasureMap.printTreasureMap();
 
 Example output 
 
+```
 | X: 0, Y 0} - State.star || X: 1, Y 0} - State.ocea || X: 2, Y 0} - State.ocea || X: 3, Y 0} - State.ocea |
 | X: 0, Y 1} - State.reef || X: 1, Y 1} - State.reef || X: 2, Y 1} - State.ocea || X: 3, Y 1} - State.ocea |
 | X: 0, Y 2} - State.ocea || X: 1, Y 2} - State.ocea || X: 2, Y 2} - State.gold || X: 3, Y 2} - State.reef |
@@ -69,8 +70,6 @@ Some nice stuff could be done with Async functions (Furtures in Dart), for examp
 Given time aloud, I have left space for items such as unit tests etc, I don't have the capcity in the scope of this test to create. 
 
 Hey, one for a rainy evening!
-
-###
 
 ## Missing/todo  
 
