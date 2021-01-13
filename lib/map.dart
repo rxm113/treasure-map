@@ -2,21 +2,23 @@ import 'dart:io';
 import 'package:pathfinding/core/grid.dart';
 import 'package:pathfinding/finders/astar.dart';
 
+import 'utils.dart';
 import 'coordante.dart';
 import 'state.dart';
 
 class TreasureMap {
   List cordinates = null;
-  int x_max = 0;
-  int y_max = 0;
+  final int xMax;
+  final int yMax;
   Coordinate start;
   Coordinate treasure;
+  bool solvable;
 
   //Constrcutur: to String take input and build the Treasure Map.
-  TreasureMap(List array, this.x_max, this.y_max) {
+  TreasureMap(List array, this.xMax, this.yMax) {
     //get max and max
-    cordinates = List.generate(this.y_max + 1,
-        (i) => List.generate(this.x_max + 1, (j) => new Coordinate(j, i)),
+    cordinates = List.generate(this.yMax + 1,
+        (i) => List.generate(this.xMax + 1, (j) => new Coordinate(j, i)),
         growable: false);
 
     for (var i = 0; i < array.length; i++) {
@@ -45,35 +47,23 @@ class TreasureMap {
     }
   }
 
-  List flatternTresureMap() {
-    List flatternMap = [];
-    for (var row in cordinates) {
-      List tmp = [];
-      for (Coordinate cordinate in row) {
-        tmp.add(cordinate.ifPassable());
-      }
-      flatternMap.add(tmp);
-    }
-
-    return flatternMap;
-  }
-
   TreasureMap findPathToTreasure() {
-    // find tha path and adds 3 as identifier
-
-    var grid = new Grid(x_max + 1, y_max + 1, flatternTresureMap());
+    var grid = new Grid(xMax + 1, yMax + 1, Utils.flatternTresureMap(this));
 
     var jps = new AStarFinder(allowDiagonal: false);
     var path = jps.findPath(start.x, start.y, treasure.x, treasure.y, grid);
-    // generate a copy of the treasure map object add solution, to be returned
-    TreasureMap solvedTreasureMap = this;
-    for (var i = 1; i < path.length - 1; i++) {
-      Coordinate c = solvedTreasureMap.cordinates[path.elementAt(i)[1]]
-          [path.elementAt(i)[0]];
-      c.state = State.path;
-      solvedTreasureMap.cordinates[path.elementAt(i)[1]][path.elementAt(i)[0]] =
-          c;
+
+    if (path.length == 0) {
+      this.solvable = false;
+    } else {
+      for (var i = 1; i < path.length - 1; i++) {
+        Coordinate c =
+            this.cordinates[path.elementAt(i)[1]][path.elementAt(i)[0]];
+        c.state = State.path;
+        this.cordinates[path.elementAt(i)[1]][path.elementAt(i)[0]] = c;
+      }
+      this.solvable = true;
     }
-    return solvedTreasureMap;
+    return this;
   }
 }

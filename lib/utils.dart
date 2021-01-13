@@ -1,6 +1,6 @@
 import 'dart:io';
-
 import 'coordante.dart';
+
 import 'state.dart';
 
 import 'map.dart';
@@ -38,45 +38,57 @@ class Utils {
     return inputText;
   }
 
+  static List flatternTresureMap(TreasureMap tm) {
+    List flatternMap = [];
+    for (var row in tm.cordinates) {
+      List tmp = [];
+      for (Coordinate cordinate in row) {
+        tmp.add(cordinate.ifPassable());
+      }
+      flatternMap.add(tmp);
+    }
+
+    return flatternMap;
+  }
+
   static void writeTextMapToFile(TreasureMap tm, String fileLocation) {
     var file = new File(fileLocation + '.answer');
     var sink = file.openWrite();
-    if (tm.cordinates == null) {
+    if (tm.cordinates == null || tm.solvable == false) {
       sink.writeln("error");
-      sink.close();
-    }
-
-    for (var item in tm.cordinates) {
-      List<String> printableTreasureMapRow = new List<String>();
-      for (Coordinate cordinate in item) {
-        switch (cordinate.state) {
-          case State.reef:
-            {
-              printableTreasureMapRow.add('x');
-            }
-            break;
-          case State.ocea:
-            {
-              printableTreasureMapRow.add('.');
-            }
-            break;
-          case State.star:
-            {
-              printableTreasureMapRow.add('S');
-            }
-            break;
-          case State.path:
-            {
-              printableTreasureMapRow.add('O');
-            }
-            break;
-          case State.gold:
-            {
-              printableTreasureMapRow.add('E');
-            }
+    } else {
+      for (var item in tm.cordinates) {
+        List<String> printableTreasureMapRow = new List<String>();
+        for (Coordinate cordinate in item) {
+          switch (cordinate.state) {
+            case State.reef:
+              {
+                printableTreasureMapRow.add('x');
+              }
+              break;
+            case State.ocea:
+              {
+                printableTreasureMapRow.add('.');
+              }
+              break;
+            case State.star:
+              {
+                printableTreasureMapRow.add('S');
+              }
+              break;
+            case State.path:
+              {
+                printableTreasureMapRow.add('O');
+              }
+              break;
+            case State.gold:
+              {
+                printableTreasureMapRow.add('E');
+              }
+          }
         }
+        sink.writeln(printableTreasureMapRow.join());
       }
-      sink.writeln(printableTreasureMapRow.join());
     }
     sink.close();
   }

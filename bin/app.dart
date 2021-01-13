@@ -12,7 +12,6 @@ void main(List<String> args) async {
   TreasureMap tm =
       Utils.processTextToTreasureMap(await Utils.readTextMapFromFile(args[0]));
   print("* Ingesting Treasure map ..... quantums processing...");
-
   Utils.writeTextMapToFile(tm.findPathToTreasure(), args[0]);
   print(
       "* Complete, please see file for route to treasure at ${args[0]}.answer");

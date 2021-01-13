@@ -42,13 +42,43 @@ https://pub.dev/packages/pathfinding
 
 Common path finding algorythm A*, although no weights used.
 
+## Approach to the problem 
+
+This could be implmented using simple data strucutes, although would be difficult for new team member to colloborate, as well as build upon. I have created the Treasure Map & Coordinate objects, so new functionality can be added in the future, maybe we want to create more types of Treasure maps? Maybe we need to add more attributes to the the current Treasure map? Enemy ships? 
+
+The following function prints the object, to get a better idea of make up. 
+
+```
+treasureMap.printTreasureMap();
+```
+
+Example output 
+
+| X: 0, Y 0} - State.star || X: 1, Y 0} - State.ocea || X: 2, Y 0} - State.ocea || X: 3, Y 0} - State.ocea |
+| X: 0, Y 1} - State.reef || X: 1, Y 1} - State.reef || X: 2, Y 1} - State.ocea || X: 3, Y 1} - State.ocea |
+| X: 0, Y 2} - State.ocea || X: 1, Y 2} - State.ocea || X: 2, Y 2} - State.gold || X: 3, Y 2} - State.reef |
+```
+
+
+This manner of implementation took pre-planning (rather than cranking out a script with Arrays/ Maps etc), although the pay offs are there in scalabilty. There is effort to put in on performance, I would like to test on very large maps, although time aloud constrcits this.
+
+Naming convention follows Dart standards (very new to Dart so followed), coupled with very desciptive names for vaiuables, classes, funtions etc. 
+
+Some nice stuff could be done with Async functions (Furtures in Dart), for example generating Treasure Map rows concurrently, this would support the efficancy greatly, but one for later, given the time we have. Also, we could fork and emend the path finding libary to better utilse the Objects we have. 
+
+Given time aloud, I have left space for items such as unit tests etc, I don't have the capcity in the scope of this test to create. 
+
+Hey, one for a rainy evening!
+
+###
+
 ## Missing/todo  
 
-- [ ] unit tests 
-- [ ] efficancy testing
+- [ ] Complete unit tests 
+- [ ] Efficancy testing - many loops which could be improved
 - [ ] Object usage, object memory usage (cloning objects) etc - there are notible parts of this code which are horribly inefficant, for example flatterning the graph to run the path finding libary (we could have amended this libary method if more time). 
-- [ ] More extensive expection handling - mimimal as rushed for solution        
-- [ ] comments & code explantion       
-- [X] Handle bad input (error files) 
+- [ ] Utlise expection handling (some custom) to move away from if/else statements - used as quick to implement.     
+- [ ] Comments & code explantion       
+- [X] Handle known 'bad' input format (error files) 
 
 Hey, it solves the problem in the time we have!
